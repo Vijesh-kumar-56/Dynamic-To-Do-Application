@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dynamic To-Do Application">
+    <title>Dynamic To-Do Application</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="app">
+        <section class="todo-card">
+            <header class="app-header">
+                <div>
+                    <p class="eyebrow">Task Manager</p>
+                    <h1>My To-Do List</h1>
+                    <p class="subtitle">Stay organized, focused, and productive.</p>
+                </div>
+                <button id="themeToggle" class="icon-button" type="button" aria-label="Toggle theme">
+                    <span id="themeIcon">☾</span>
+                </button>
+            </header>
+
+            <form id="taskForm" class="task-form">
+                <label class="sr-only" for="taskInput">Enter a task</label>
+                <input id="taskInput" type="text" placeholder="What needs to be done?"
+                    maxlength="120" autocomplete="off">
+                <button class="add-button" type="submit">Add Task</button>
+            </form>
+
+            <p id="message" class="message" aria-live="polite"></p>
+
+            <section class="stats" aria-label="Task statistics">
+                <div class="stat"><span id="totalCount">0</span><small>Total</small></div>
+                <div class="stat"><span id="pendingCount">0</span><small>Pending</small></div>
+                <div class="stat"><span id="completedCount">0</span><small>Completed</small></div>
+            </section>
+
+            <div class="toolbar">
+                <div class="filters" role="group" aria-label="Filter tasks">
+                    <button class="filter-button active" type="button" data-filter="all">All</button>
+                    <button class="filter-button" type="button" data-filter="pending">Pending</button>
+                    <button class="filter-button" type="button" data-filter="completed">Completed</button>
+                </div>
+                <button id="clearCompleted" class="clear-button" type="button">Clear Completed</button>
+            </div>
+
+            <ul id="taskList" class="task-list" aria-live="polite"></ul>
+
+            <div id="emptyState" class="empty-state">
+                <div class="empty-icon">✓</div>
+                <h2>No tasks yet</h2>
+                <p>Add your first task to get started.</p>
+            </div>
+
+            <footer class="app-footer">
+                <span id="taskSummary">0 tasks</span>
+                <span>Saved automatically</span>
+            </footer>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
